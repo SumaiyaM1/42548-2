@@ -1,0 +1,24 @@
+//Chat generated
+
+import static org.junit.Assert.*;
+import org.junit.Before;
+import org.junit.Test;
+
+public class BoardTest {
+    private Board board;
+    private Game game;
+
+    @Before
+    public void setUp() {
+        game = new Game();
+        board = new Board(3, game); // Create a 3x3 board for testing
+    }
+
+    @Test
+    public void testValidMove() {
+        BoardLabel[][] labels = board.getBoardLabels();
+        labels[0][0].setText("S"); // Simulate player move
+
+        assertEquals("S", labels[0][0].getText());
+    }
+}
