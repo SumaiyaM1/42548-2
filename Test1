@@ -1,0 +1,25 @@
+//chat genererated
+
+import static org.junit.Assert.*;
+import org.junit.Before;
+import org.junit.Test;
+
+public class InvalidMoveTest {
+    private Board board;
+    private Game game;
+
+    @Before
+    public void setUp() {
+        game = new Game();
+        board = new Board(3, game); // Create a 3x3 board for testing
+    }
+
+    @Test
+    public void testInvalidMove() {
+        BoardLabel[][] labels = board.getBoardLabels();
+        labels[0][0].setText("S"); // First player places 'S'
+        labels[0][0].setText("O"); // Try to place 'O' in the same cell
+
+        assertEquals("S", labels[0][0].getText()); // The cell should still hold 'S'
+    }
+}
